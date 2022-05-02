@@ -1,1 +1,16 @@
-<p>ui works!</p>
+<div class="header">
+  <ng-content select=".tr-header"></ng-content>
+</div>
+
+<div class="body">
+  <div class="main">
+    <ng-content select=".tr-content"></ng-content>
+  </div>
+  <div class="nav">
+    <ng-content select=".tr-nav"></ng-content>
+  </div>
+</div>
+
+<div class="footer">
+  <ng-content select=".tr-footer"></ng-content>
+</div>
