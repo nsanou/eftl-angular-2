@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/core/models/client';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'app-page-add-client',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAddClientComponent implements OnInit {
 
-  constructor() { }
+  public id: number = 0;
+  public name: string = '';
+
+  constructor(private clientsService: ClientsService) { }
 
   ngOnInit(): void {
   }
 
+  ajouter() {
+    console.log(this.id);
+    console.log(this.name);
+    this.clientsService.addClient(
+      {id: this.id, name: this.name} as Client
+    ).subscribe();
+  }
 }

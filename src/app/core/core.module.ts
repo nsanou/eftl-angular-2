@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IconsModule } from '../icons/icons.module';
 import { UiModule } from '../ui/ui.module';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -18,7 +19,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     IconsModule,
-    RouterModule,
+    RouterModule
   ],
   exports: [
     NavComponent,

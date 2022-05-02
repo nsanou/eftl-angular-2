@@ -1,1 +1,26 @@
-<p>page-list-clients works!</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td> {{client.id}} </td>
+      <td> {{client.name}} </td>
+      <td>
+        <a [routerLink]="['../edit', client.id]">
+          <app-icon-edit></app-icon-edit>
+        </a>
+        <app-icon-delete></app-icon-delete>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a [routerLink]="'../add'" class="btn btn-outline-primary">
+  <app-icon-add></app-icon-add>
+</a>
+
