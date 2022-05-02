@@ -1,1 +1,17 @@
-<p>nav works!</p>
+
+<a routerLink="clients"
+  routerLinkActive="router-link-active">Clients</a>
+<a routerLink="poubelle"
+  routerLinkActive="router-link-active">Poubelle</a>
+<hr>
+<a [routerLink]="['clients']"
+  routerLinkActive="router-link-active">Clients</a>
+<a [routerLink]="['poubelle']"
+  routerLinkActive="router-link-active">Poubelle</a>
+<hr>
+<a [routerLink]="['clients', 'add']"
+  routerLinkActive="router-link-active">Ajout client</a>
+
+<a [routerLink]="['clients/add']"
+  routerLinkActive="router-link-active">Ajout client</a>
+
