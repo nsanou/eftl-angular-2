@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UiComponent } from './components/ui/ui.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -9,7 +10,8 @@ import { UiComponent } from './components/ui/ui.component';
     UiComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule //TODO REMOVE
   ], exports: [
     UiComponent
   ]
