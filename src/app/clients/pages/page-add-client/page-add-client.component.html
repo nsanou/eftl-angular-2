@@ -1,5 +1,15 @@
 
-<fieldset class="fieldset  m-5">
+<ngb-toast header="Ajout de client" class="bg-success text-light" *ngIf="success"
+  (hidden)="goBackToList()">
+  Ajout réussi
+</ngb-toast>
+
+<ngb-toast header="Ajout de client" class="bg-danger text-light" [delay]="10000" *ngIf="failure"
+  (hidden)="failure = false">
+  Echec de l'ajout
+</ngb-toast>
+
+<fieldset class="fieldset  m-5" [disabled]="failure || success">
   <div class="form-control m-3">
     <label>
       Id :

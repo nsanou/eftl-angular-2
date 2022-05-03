@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/core/models/client';
 import { ClientsService } from '../../services/clients.service';
 
@@ -12,16 +13,26 @@ export class PageAddClientComponent implements OnInit {
   public id: number = 0;
   public name: string = '';
 
-  constructor(private clientsService: ClientsService) { }
+  public success = false;
+  public failure = false;
+
+  constructor(private clientsService: ClientsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
   ajouter() {
-    console.log(this.id);
-    console.log(this.name);
     this.clientsService.addClient(
       {id: this.id, name: this.name} as Client
-    ).subscribe();
+    ).subscribe({
+      next: () => { this.success = true; },
+      error: () => { this.failure = true; }
+    });
+  }
+
+  goBackToList() {
+    this.router.navigate(['../list'], {relativeTo: this.activatedRoute})
   }
 }

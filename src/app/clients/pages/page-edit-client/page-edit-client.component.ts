@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/core/models/client';
 import { ClientsService } from '../../services/clients.service';
 
@@ -15,7 +15,9 @@ export class PageEditClientComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private clientsService: ClientsService) { }
+    private clientsService: ClientsService,
+    private router: Router,
+    ) { }
 
   getClientId() {
     return this.clientId;
@@ -33,6 +35,17 @@ export class PageEditClientComponent implements OnInit {
         );
       }
     );
+  }
+
+  goBackToList() {
+    // navigateByUrl n'utilise que des chemins absolus
+    //this.router.navigateByUrl('/clients/list');
+    this.router.navigate(['../../list'], {relativeTo: this.activatedRoute})
+  }
+
+  update() {
+    this.clientsService.updateClient(this.client).subscribe();
+    this.goBackToList();
   }
 
 }

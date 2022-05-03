@@ -7,6 +7,7 @@ import { PageEditClientComponent } from './pages/page-edit-client/page-edit-clie
 import { PageListClientsComponent } from './pages/page-list-clients/page-list-clients.component';
 import { IconsModule } from '../icons/icons.module';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     ClientsRoutingModule,
     IconsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   exports: [
     PageAddClientComponent,
