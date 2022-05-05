@@ -7,6 +7,7 @@ import { IconsModule } from '../icons/icons.module';
 import { UiModule } from '../ui/ui.module';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -26,7 +27,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     FooterComponent,
     UiModule,
-    IconsModule
+    IconsModule,
+    SharedModule
   ]
 })
 export class CoreModule { }

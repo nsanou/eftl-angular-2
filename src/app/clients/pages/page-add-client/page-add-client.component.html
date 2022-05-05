@@ -1,4 +1,4 @@
-
+<app-template-page [titre]="'Ajout d\'un client'">
 <ngb-toast header="Ajout de client" class="bg-success text-light" *ngIf="success"
   (hidden)="goBackToList()">
   Ajout réussi
@@ -9,26 +9,40 @@
   Echec de l'ajout
 </ngb-toast>
 
+<form [formGroup]="formulaire">
 <fieldset class="fieldset  m-5" [disabled]="failure || success">
   <div class="form-control m-3">
     <label>
       Id :
-      <input [(ngModel)]="id" type="number">
+      <input formControlName="id" type="number" min="0">
     </label>
+    <p class="text-danger" *ngIf="formulaire.controls['id'].invalid">
+      L'identifiant est requis et doit être
+        compris entre 10 et 100.</p>
   </div>
   <div class="form-control m-3">
     <label>
       Nom :
-      <input [(ngModel)]="name" type="text">
+      <input formControlName="name" type="text">
     </label>
+    <p class="text-danger" *ngIf="formulaire.controls['name'].invalid">
+      Le nom est requis et doit contenir
+      au moins 5 caractères.</p>
+    {{formulaire.controls['name'].errors | json}}
+        <p *ngIf="formulaire.controls['name'].hasError('pattern')">Le nom est obligatoire !!!</p>
   </div>
 </fieldset>
 
 <button class="btn btn-outline-primary m-3"
-  (click)="ajouter()">
+  (click)="ajouter()" [disabled]="formulaire.invalid">
   Ajouter
 </button>
 
 <button class="btn btn-outline-secondary m-3">
   <a routerLink="../list">Retour</a>
 </button>
+
+</form>
+
+
+</app-template-page>

@@ -8,6 +8,7 @@ import { PageListClientsComponent } from './pages/page-list-clients/page-list-cl
 import { IconsModule } from '../icons/icons.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ClientsRoutingModule,
     IconsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+
+    SharedModule
   ],
   exports: [
     PageAddClientComponent,

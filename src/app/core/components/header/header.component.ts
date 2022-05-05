@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VersionService } from 'src/app/shared/services/version.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private versionService: VersionService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public incrementerVersion() {
+    console.info('aaaaaaaaaaaaa');
+    //alert('hello');
+    console.info('bbbbbbbbbbbb');
+    this.versionService.incrementerVersion();
+  }
 }
