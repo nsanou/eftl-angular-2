@@ -43,7 +43,16 @@
     </tr>
   </tbody>
 </table>
-<a [routerLink]="'../add'" class="btn btn-outline-primary">
+<a [routerLink]="'../add'" appBtn="outline-primary">
+  <app-icon-add></app-icon-add>
+</a>
+<a [routerLink]="'../add'" appBtn="secondary">
+  <app-icon-add></app-icon-add>
+</a>
+<a [routerLink]="'../add'" appBtn="danger">
+  <app-icon-add></app-icon-add>
+</a>
+<a [routerLink]="'../add'" appBtn="success">
   <app-icon-add></app-icon-add>
 </a>
 </div>
