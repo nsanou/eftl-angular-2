@@ -1,4 +1,8 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ClientsService } from '../../services/clients.service';
 
 import { PageAddClientComponent } from './page-add-client.component';
 
@@ -8,7 +12,20 @@ describe('PageAddClientComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageAddClientComponent ]
+      declarations: [ PageAddClientComponent ],
+      imports: [
+        RouterModule.forRoot([
+          {
+              path: '',
+              component: PageAddClientComponent,
+          }
+        ]),
+        ReactiveFormsModule
+      ],
+      providers: [
+        { provide: ClientsService, useValue: {} },
+        { provide: HttpClient, useValue: {} },
+      ]
     })
     .compileComponents();
   });
