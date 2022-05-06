@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "login": "titi",
+      "name": "Jeanne Moreau",
+      "mdp": "titi1"
+    },
+    {
+      "login": "tata",
+      "name": "Christophe Lambert",
+      "mdp": "titi2"
+    },
+    {
+      "login": "toto",
+      "name": "Luis de Funes",
+      "mdp": "titi3"
+    }
+  ],
+  "orders": [
+    {
+      "ttc": 123,
+      "date": "2022-05-06",
+      "status": "TODO",
+      "id": 11,
+      "idClient": 9
+    },
+    {
+      "ttc": 0,
+      "date": "",
+      "status": "TODO",
+      "id": "131",
+      "idClient": 9
+    },
+    {
+      "date": "",
+      "ttc": 0,
+      "status": "TODO",
+      "id": 10,
+      "idClient": 9
+    }
+  ],
+  "clients": [
+    {
+      "id": 2,
+      "name": "client test 2"
+    },
+    {
+      "id": 8,
+      "name": "Test retour"
+    },
+    {
+      "id": 9,
+      "name": "sfztzeft"
+    },
+    {
+      "id": 11,
+      "name": "sfztzeft"
+    },
+    {
+      "id": 17,
+      "name": "Youhou"
+    },
+    {
+      "id": 20,
+      "name": "erer"
+    },
+    {
+      "id": 21,
+      "name": ""
+    }
+  ]
+}
