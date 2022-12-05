@@ -9,7 +9,7 @@ Mise à jour de la directive pour faciliter l'usage des boutons bootstrap :
   - src/app/shared/directives/btn.directive.ts
   - src/app/clients/pages/page-list-clients/page-list-clients.component.html
 
-# Monang3
+# Monang3 - abandonné
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
